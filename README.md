@@ -595,7 +595,7 @@ az spring gateway update \
 Create the identity service application
 
 ```shell
-az spring app create --name ${IDENTITY_SERVICE_APP} --instance-count 1 --memory 1Gi
+az spring app create --name ${IDENTITY_SERVICE_APP} --instance-count 1 --memory 1Gi --jvm-options='-XX:MaxMetaspaceSize=148644K'
 ```
 
 Bind the identity service to Application Configuration Service
