@@ -325,8 +325,8 @@ Create an application for each service:
 ```shell
 az spring app create --name ${CART_SERVICE_APP} --instance-count 1 --memory 1Gi &
 az spring app create --name ${ORDER_SERVICE_APP} --instance-count 1 --memory 1Gi &
-az spring app create --name ${PAYMENT_SERVICE_APP} --instance-count 1 --memory 1Gi &
-az spring app create --name ${CATALOG_SERVICE_APP} --instance-count 1 --memory 1Gi &
+az spring app create --name ${PAYMENT_SERVICE_APP} --instance-count 1 --memory 1Gi --jvm-options='-XX:MaxMetaspaceSize=148644K' &
+az spring app create --name ${CATALOG_SERVICE_APP} --instance-count 1 --memory 1Gi --jvm-options='-XX:MaxMetaspaceSize=148644K' &
 az spring app create --name ${FRONTEND_APP} --instance-count 1 --memory 1Gi &
 wait
 ```
